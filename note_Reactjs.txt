@@ -1,0 +1,16 @@
+life cycle components:
+1: Mounting: constructor(): khởi tạo state -> render -> componentDidmount (Được gọi sau khi đã hiển thị component ra ngoài trình duyệt, và hàm này được thực hiện một lần duy nhất. Hàm này được gọi để thông báo component đã tồn tại trên DOM, từ đó các thao tác trên DOM có thể thực hiện bình thường với component này)
+2: Updating: render -> componentDidupdate (props thay đổi, state thay đổi thì reRender, k nên setState trong hàm này, hạn chế dùng)
+3: Unmounting: componentsWillUnmount (xóa dữ liệu time out)
+
+useEffect:
+1: Mounting: 
+- rendering 
+- run useEffect()
+2: Updating: 
+- rendering 
+- run `useEffect() cleanup` nếu dependencies thay đổi. 
+- run `useEffect()` nếu dependencies thay đổi.
+3: Unmounting:
+- run `useEffect() cleanup`.
+
